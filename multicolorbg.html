@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <style>
+     .button{
+        height: 100px;
+        width: 150px;
+       }
+       #grey{
+        background-color: grey;
+       }
+       #white{
+        background-color: white;
+       }
+       #blue{
+        background-color: blue;
+       }
+       #yellow{
+        background-color: yellow;
+       }
+    </style>
+</head>
+<body id="body">
+    <h1>Here is Multiple background-color choose one and click on the button to change to that color</h1>
+        <button class="button" id="grey">grey</button>
+        <button class="button" id="white">white</button>
+        <button class="button"id="blue">blue</button>
+        <button class="button"id="yellow">yellow</button>
+</body>
+<script>
+    const buttons = document.querySelectorAll('button');
+    const body = document.querySelector('body')
+    buttons.forEach(function (button){
+        button.addEventListener('click', function (e){
+            if(e.target.id === 'grey'){
+                body.style.backgroundColor = e.target.id
+            }
+             if(e.target.id === 'white'){
+                body.style.backgroundColor = e.target.id
+            }
+             if(e.target.id === 'blue'){
+                body.style.backgroundColor = e.target.id
+            }
+             if(e.target.id === 'yellow'){
+                body.style.backgroundColor = e.target.id
+            }
+        });
+    });
+    </script>
+</html>
