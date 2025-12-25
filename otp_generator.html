@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <h2>OTP Generator</h2>
+  <button onclick="generateOTP()">Generate OTP</button>
+  <p id="getotp"></p>
+
+  
+</body>
+<script>
+    function generateOTP() {
+  const otpLength = 6;
+  let otp = "";
+
+  for (let starboy = 0; starboy < otpLength; starboy++) {
+    otp += Math.floor(Math.random() * 10);
+  }
+  console.log(otp);
+  
+  document.querySelector("#getotp").innerText = "Your OTP is: " + otp;
+};
+</script>
+</html>
