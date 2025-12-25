@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+  <div class="cal">
+    <form id="form">
+      <p><label>Enter First Number<input type="text" id="first"></label></p>
+      <p><label>Enter 2nd Number<input type="text" id="second"></label></p>
+    <label for="operator">Select Operator:</label>
+    <select id="operator" name="operator">
+    <option value="add">+</option>
+    <option value="subtract">-</option>
+    <option value="multiply">*</option>
+    <option value="divide">/</option>
+    </select>
+    <input type="submit" id="btn" value="Calculate">
+    </form>
+  </div>
+  <div id="result"></div>
+</body>
+<script>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  document.addEventListener('submit', function(e){
+    e.preventDefault()
+      const firstValue = parseInt(document.getElementById('first').value);
+      const secondValue = parseInt(document.getElementById('second').value);
+      const operator = document.getElementById('operator').value;
+      if(isNaN(firstValue) || isNaN(secondValue)){
+        result.innerText = "Enter Numbers Only"
+      }
+      let answer;
+      if(operator == 'add'){
+        answer = firstValue + secondValue;
+      } else if(operator == 'subtract'){
+        answer = firstValue - secondValue;
+      }else if(operator == 'multiply'){
+        answer = firstValue * secondValue;
+      }else if(operator == 'divide'){
+        if(secondValue === 0){
+          result.innerHTML = 'Cant Divide By 0'
+          return;
+        }
+           answer = firstValue / secondValue;
+      }
+      result.innerHTML = answer;
+  });
+</script>
+</html>
